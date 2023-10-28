@@ -1,0 +1,44 @@
+﻿@*@model SearchCriteriaModel
+    @using (Html.BeginForm("Search", "MoProduct", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.ProductName)
+        @Html.TextBoxFor(model => model.Size)
+        @Html.EditorFor(model => model.Price)
+        @Html.EditorFor(model => model.MfgDate)
+        @Html.TextBoxFor(model => model.Category)
+        <input type="submit" value="Search" />
+    }*@
+
+
+
+@model Kit19Task.Models.SearchCriteriaModel
+
+@using (Html.BeginForm("Search", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductName)
+        @Html.TextBoxFor(model => model.ProductName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Size)
+        @Html.TextBoxFor(model => model.Size, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Price)
+        @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MfgDate)
+        @Html.TextBoxFor(model => model.MfgDate, new { @class = "form-control", type = "date" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Category)
+        @Html.TextBoxFor(model => model.Category, new { @class = "form-control" })
+    </div>
+
+    <input type="submit" value="Search" class="btn btn-primary" />
+}

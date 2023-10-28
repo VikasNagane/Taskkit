@@ -1,0 +1,32 @@
+﻿
+@model Kit19Task.Models.
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@model List<MoProduct>
+
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Size</th>
+        <th>Price</th>
+        <th>Manufacturing Date</th>
+        <th>Category</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.ProductID</td>
+            <td>@product.ProductName</td>
+            <td>@product.Size</td>
+            <td>@product.Price</td>
+            <td>@product.MfgDate.ToShortDateString()</td>
+            <td>@product.Category</td>
+        </tr>
+    }
+</table>
